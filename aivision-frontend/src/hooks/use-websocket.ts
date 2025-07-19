@@ -21,7 +21,7 @@ export function useWebSocket() {
   });
 
   const connect = useCallback(() => {
-    const wsUrl = "ws://192.168.8.186:8000/ws";
+    const wsUrl = "ws://192.168.1.10:8000/ws";
     
     ws.current = new WebSocket(wsUrl);
     
