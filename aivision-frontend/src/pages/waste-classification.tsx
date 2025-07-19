@@ -17,8 +17,9 @@ export default function WasteClassification() {
 
   const handleConnect = () => {
     setWsUrl(urlInput);
-    console.log(wsUrl)
+    console.log("Connecting to:", urlInput);
   };
+
 
   
   const { toast } = useToast();

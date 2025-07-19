@@ -93,7 +93,7 @@ export function useWebSocket(wsUrl: string) {
       console.error("WebSocket error:", error);
       setIsConnected(false);
     };
-  }, []);
+  }, [wsUrl]);
 
   const sendMessage = useCallback((message: WebSocketMessage) => {
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
@@ -122,14 +122,19 @@ export function useWebSocket(wsUrl: string) {
   }, [sendMessage]);
 
   useEffect(() => {
+    if (!wsUrl) return;
+
+    console.log("🔌 Attempting WebSocket connection to:", wsUrl); // ✅
     connect();
-    
+
     return () => {
       if (ws.current) {
+        console.log("❌ Closing WebSocket connection:", wsUrl);
         ws.current.close();
       }
     };
   }, [connect]);
+
 
   return {
     isConnected,
