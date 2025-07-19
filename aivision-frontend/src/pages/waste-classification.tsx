@@ -176,10 +176,10 @@ export default function WasteClassification() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <main className="max-w-6xl mx-auto py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
           {/* Camera Feed Section */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-2 ml-[-4rem] space-y-6">
             <CameraFeed
               onFrameCapture={handleFrameCapture}
               onImageCapture={handleImageCapture}

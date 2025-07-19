@@ -77,7 +77,7 @@ export function ControlPanel({
   const recentDetections = detections.slice(-10).reverse();
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6">
+    <div className="flex flex-col lg:flex-row gap-3">
       {/* LEFT SIDE: Upload + Configuration */}
       <div className="flex-1 space-y-6">
         {/* Model Upload */}
