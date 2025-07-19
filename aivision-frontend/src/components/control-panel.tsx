@@ -79,7 +79,7 @@ export function ControlPanel({
   return (
     <div className="flex flex-col lg:flex-row gap-3">
       {/* LEFT SIDE: Upload + Configuration */}
-      <div className="flex-1 space-y-6">
+      <div className="flex-1 space-y-3">
         {/* Model Upload */}
         <Card className="bg-surface border-border">
           <CardHeader>
@@ -192,7 +192,7 @@ export function ControlPanel({
       </div>
 
       {/* RIGHT SIDE: Real-time Detection + Export */}
-      <div className="flex-1 space-y-6">
+      <div className="flex-1 space-y-3">
         {/* Real-time Detection Results */}
         <Card className="bg-surface border-border">
           <CardHeader>

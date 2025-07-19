@@ -7,8 +7,20 @@ import { ControlPanel } from "@/components/control-panel";
 import { PerformanceMetrics } from "@/components/performance-metrics";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DetectionConfig } from "@/types/detection";
+import { cn } from "@/lib/utils";
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 export default function WasteClassification() {
+  const [urlInput, setUrlInput] = useState("ws://localhost:8000");
+  const [wsUrl, setWsUrl] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleConnect = () => {
+    setWsUrl(urlInput);
+    console.log(wsUrl)
+  };
+
+  
   const { toast } = useToast();
   const {
     isConnected,
@@ -18,7 +30,7 @@ export default function WasteClassification() {
     processFrame,
     captureImage,
     sendMessage
-  } = useWebSocket();
+  } = useWebSocket(wsUrl);
 
   const [config, setConfig] = useState<DetectionConfig>({
     confidence_threshold: 0.5,
@@ -44,7 +56,7 @@ export default function WasteClassification() {
 
   const handleConfigChange = useCallback(async (newConfig: DetectionConfig) => {
     try {
-      const response = await fetch('http://192.168.8.186:8000/api/update-config', {
+      const response = await fetch('/api/update-config', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +87,7 @@ export default function WasteClassification() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://192.168.8.186:8000/api/upload-model', {
+      const response = await fetch('/api/upload-model', {
         method: 'POST',
         body: formData,
       });
@@ -111,7 +123,7 @@ export default function WasteClassification() {
 
   const handleExport = useCallback(async (format: 'json' | 'csv' | 'images') => {
     try {
-      const response = await fetch(`http://192.168.8.186:8000/api/export/${format}`);
+      const response = await fetch(`/api/export/${format}`);
       
       if (response.ok) {
         const result = await response.json();
@@ -145,6 +157,7 @@ export default function WasteClassification() {
     sessionDuration: performanceMetrics.session_duration || 0
   };
 
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -193,6 +206,40 @@ export default function WasteClassification() {
 
           {/* Control Panel */}
           <div className="lg:col-span-1">
+            <div className="w-[27rem] mb-3 rounded-lg bg-surface p-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <h2 className="font-semibold ml-1">WebSocket Server</h2>
+                <button onClick={() => setIsOpen(!isOpen)} className="text-sm">
+                  {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+              </div>
+
+              {/* Input with collapse animation */}
+              <div
+                className={cn(
+                  "grid transition-all duration-300 overflow-hidden",
+                  isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"
+                )}
+              >
+                <div className="min-h-0">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={urlInput}
+                      onChange={(e) => setUrlInput(e.target.value)}
+                      placeholder="ws://localhost:8000"
+                      className="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm text-neutral-800 focus:border-black focus:ring-1 focus:ring-neutral-700 outline-none transition"
+                    />
+                    <button
+                      onClick={handleConnect}
+                      className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition"
+                    >
+                      Connect
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <ControlPanel
               config={config}
               onConfigChange={handleConfigChange}

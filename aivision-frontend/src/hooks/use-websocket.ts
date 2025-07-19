@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 // @ts-ignore
 import { WebSocketMessage, Detection, PerformanceMetrics } from "@/types/detection";
 
-export function useWebSocket() {
+export function useWebSocket(wsUrl: string) {
   const ws = useRef<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [detections, setDetections] = useState<Detection[]>([]);
@@ -21,9 +21,8 @@ export function useWebSocket() {
   });
 
   const connect = useCallback(() => {
-    const wsUrl = "ws://192.168.1.10:8000/ws";
-    
-    ws.current = new WebSocket(wsUrl);
+
+    ws.current = new WebSocket(`${wsUrl}/ws`);
     
     ws.current.onopen = () => {
       console.log("WebSocket connected");
