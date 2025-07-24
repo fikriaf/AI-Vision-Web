@@ -8,12 +8,18 @@
 </table>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Blade-42%25-FF2D20?style=flat"></a>
-  <a href="#"><img src="https://img.shields.io/badge/PHP-29%25-8892BF?style=flat&logo=php"></a>
-  <a href="#"><img src="https://img.shields.io/badge/JavaScript-16%25-F7DF1E?style=flat&logo=javascript&logoColor=black"></a>
-  <a href="#"><img src="https://img.shields.io/badge/CSS-9%25-264DE4?style=flat&logo=css3&logoColor=white"></a>
-  <a href="#"><img src="https://img.shields.io/github/repo-size/fikriaf/wekker?color=blue"></a>
-  <a href="#"><img src="https://img.shields.io/github/languages/code-size/fikriaf/wekker?color=green"></a>
+  <a href="#"><img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black"></a>
+  <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white"></a>
+  <a href="#"><img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white"></a>
+  <a href="#"><img src="https://img.shields.io/badge/YOLO-FFDD00?style=flat&logo=github&logoColor=black"></a>
+  <a href="#"><img src="https://img.shields.io/badge/WebSocket-4CAF50?style=flat&logo=websocket&logoColor=white"></a>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/github/repo-size/fikriaf/AI-Vision-Web?color=blue"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/code-size/fikriaf/AI-Vision-Web?color=green"></a>
 </p>
 
 <p align="center">
