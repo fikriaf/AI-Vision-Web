@@ -7,7 +7,6 @@
   </tr>
 </table>
 
-
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Blade-42%25-FF2D20?style=flat"></a>
   <a href="#"><img src="https://img.shields.io/badge/PHP-29%25-8892BF?style=flat&logo=php"></a>
@@ -15,6 +14,11 @@
   <a href="#"><img src="https://img.shields.io/badge/CSS-9%25-264DE4?style=flat&logo=css3&logoColor=white"></a>
   <a href="#"><img src="https://img.shields.io/github/repo-size/fikriaf/wekker?color=blue"></a>
   <a href="#"><img src="https://img.shields.io/github/languages/code-size/fikriaf/wekker?color=green"></a>
+</p>
+
+<p align="center">
+  Live UI:
+  <a href="https://ai-vision-web.vercel.app/" target="_blank">https://ai-vision-web.vercel.app/</a>
 </p>
 
 ## Overview
