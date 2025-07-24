@@ -1,6 +1,21 @@
-# AI Vision Waste Classification System
+<h1 align="center">AI Vision Waste Classification System</h1>
 
-![Hasil Demo](https://github.com/fikriaf/AI-Vision-Web/blob/main/Preview.png)
+<table>
+  <tr>
+    <td><img src="https://github.com/fikriaf/AI-Vision-Web/blob/main/Preview.png?raw=true" width="500px"></td>
+    <td><img src="https://github.com/fikriaf/AI-Vision-Web/blob/main/image.png?raw=true" width="540px"></td>
+  </tr>
+</table>
+
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Blade-42%25-FF2D20?style=flat"></a>
+  <a href="#"><img src="https://img.shields.io/badge/PHP-29%25-8892BF?style=flat&logo=php"></a>
+  <a href="#"><img src="https://img.shields.io/badge/JavaScript-16%25-F7DF1E?style=flat&logo=javascript&logoColor=black"></a>
+  <a href="#"><img src="https://img.shields.io/badge/CSS-9%25-264DE4?style=flat&logo=css3&logoColor=white"></a>
+  <a href="#"><img src="https://img.shields.io/github/repo-size/fikriaf/wekker?color=blue"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/code-size/fikriaf/wekker?color=green"></a>
+</p>
 
 ## Overview
 
